@@ -1,12 +1,5 @@
 {
   "routes": [
-    {
-      "src": "/",
-      "dest": "/components/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/components/$1"
-    }
+    { "src": "/", "dest": "/assets/index.html" }
   ]
 }
