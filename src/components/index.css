@@ -1,10 +1,3 @@
-.Title {
-    text-align: center;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    margin: auto;
-}
-
 .full-page-section {
     width: 100%;
     height: 100vh;
@@ -13,7 +6,7 @@
     flex-direction: column;
     /* 垂直排列其子元素 */
     /* 使用 Flexbox 居中内容 */
-    justify-content: center;
+    justify-content: flex-start;
     /* 水平居中 */
     align-items: center;
     /* 垂直居中 */
@@ -32,6 +25,12 @@
     background-position: center;
     /* 图片不重复平铺 */
     background-repeat: no-repeat;
+        /* 
+     * 为标题增加一些顶部内边距，使其不会紧贴着浏览器边缘，更加美观
+     * 同时，为整个内容区域增加一些水平内边距，防止内容在小屏幕上贴边
+     */
+    padding: 40px 20px; /* 上下内边距 40px，左右内边距 20px */
+    box-sizing: border-box; /* 确保 padding 不会增加元素的总宽度和高度 */
 }
 .lastPage {
     width: 100%;
@@ -54,4 +53,24 @@
     background-position: center;
     /* 图片不重复平铺 */
     background-repeat: no-repeat;
+        /* 同样增加内边距 */
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+/* --- 标题样式调整 --- */
+
+/* 统一所有 h1 的样式，确保它们在各自容器顶部时外观一致 */
+.full-page-section h1,
+.lastPage h1.Title {
+    /* 
+     * 由于父容器已经设置了 padding-top，并且 flex 布局是居顶的，
+     * h1 会自然地显示在容器顶部附近。
+     * 我们可以为 h1 增加一个下边距，使其与下方的内容保持适当的距离。
+     */
+    margin-bottom: 30px; /* 增加标题下方的外边距 */
+    padding: 10px 40px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center; /* 确保文字居中 */
 }
